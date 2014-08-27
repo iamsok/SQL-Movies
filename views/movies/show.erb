@@ -1,0 +1,17 @@
+<h2> Genre: <%= @movie_info[0]["genre"] %> <h2>
+<h2> Studio: <%= @movie_info[0]["studio"] %> <h2>
+
+
+
+<table>
+  <tr>
+    <th>Actor</th>
+    <th>Role</th>
+  </tr>
+  <% @movie_info.each do |row| %>
+  <tr>
+    <td><a href="/actors/<%= find_actor_id_by_name(row["actor"])["id"] %>" target="_blank"> <%= row["actor"] %> </a></td>
+    <td> <%= row["character"] %> </td>
+  <tr>
+  <% end %>
+<table>
